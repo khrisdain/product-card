@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.conatiner{
+    position: relative;
+}
+
+.container .card{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: white;
+    box-shadow: 5px 5px 7px rgb(180, 180, 180),
+                -5px -5px 7px rgb(214, 212, 212);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container .card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(243, 17, 17);
+    clip-path: circle(180px at 80% 20%);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.container .card:hover:before{
+    clip-path: circle(300px at 80% 20%)
+}
+
+
+.container .card::after{
+    content: 'Nike';
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 15em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(233, 13, 13, 0.24);
+}  
+
+.container .card .imageBx{
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-80%);
+    height: 220px;
+    transition: 0.5s;
+}
+
+.container .card:hover .imageBx{
+    top: 0%;
+    transform: translateY(0%)
+}
+
+.container .card .imageBx img{
+    top: 50%;
+    left: 50%;
+    transform: translate( 40%,50%) rotate(-25deg);
+    width: 100px;
+}
+
+.container .card .content-card{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+    text-align: center;
+    transition: 1s;
+}
+
+.container .card:hover .content-card{
+    height: 200px;
+}
+
+.container .card .content-card h2{
+    position: relative;
+    font-weight: 600;
+    color: rgb(243, 20, 20);
+    letter-spacing: 1px;
+}
+
+.container .card:hover .content-card h2,
+.container .card:hover .content-card .size h3,
+.container .card:hover .content-card .color h3{
+    color: white;
+}
+
+
+.container .card .content-card .size,
+.container .card .content-card .color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card:hover .container-card .size{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container .card:hover .container-card .color{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container .card .content-card .size h3,
+.container .card .content-card .color h3{
+    color: rgb(243, 20, 20);
+    font-weight: 300px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.container .card .content-card .size span{
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 0 5px;
+    transition: 0.5s;
+    color: #111;
+    cursor: pointer;
+}
+
+.container .card .content-card .size span:hover{
+    background-color:  rgb(243, 20, 20);
+}
+
+.container .card .content-card .color span{
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.container .card .content-card .color span:nth-child(2){
+    background: white;
+    box-shadow: 2px 2px 2px rgb(148, 148, 148),
+                -2px -2px 2px rgba(8, 8, 8, 0.2);
+}
+
+.container .card .content-card .color span:nth-child(3){
+    background: black;
+    box-shadow: 2px 2px 2px rgb(99, 98, 98),
+               -2px -2px 2px rgba(224, 224, 224, 0.664);
+}
+
+.container .card .content-card .color span:nth-child(4){
+    background: green;
+    box-shadow: 2px 2px 2px rgba(20, 20, 20, 0.349),
+                -2px -2px 2px rgba(248, 246, 246, 0.945);
+}
+
+.container .card .content-card a{
+    display: inline-block;
+    padding: 10px 20px;
+    background:  rgb(243, 20, 20);
+    border-radius: 4px;
+    margin-top: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
+.container .card:hover .content-card a{
+    opacity: 1;
+    transform: translateY(50px);
+    transition-delay: 0.75s;
+}
